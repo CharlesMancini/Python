@@ -1,4 +1,4 @@
-people = {"dave" : "joiner" ,"bob" : "builder"}
+people = {"charles" : "mancini" ,"John" : "Doe"}
 
 def intro():
     print("Welcome to the Database")
