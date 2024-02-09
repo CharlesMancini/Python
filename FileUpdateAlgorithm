@@ -1,0 +1,48 @@
+#### ALGORITHM FOR FILE UPDATES IN PYTHON ####
+
+#Open the file that contains the allow list:
+#Use the open() function with the appropriate file mode ("r" for reading).
+  with open("allow_list.txt", "r") as file:
+
+#Read the file contents:
+#Use the read() method to retrieve the content of the file as a string.
+  allow_list_content = file.read()
+
+#Convert the string into a list:
+#Use the split() method to convert the string into a list of IP addresses.
+  allow_list = allow_list_content.split()
+
+#Iterate through the remove list:
+#Use a for loop to iterate through each IP address in the remove list.
+for ip_to_remove in remove_list:
+
+#Remove IP addresses that are on the remove list:
+#Use the remove() method to remove the specified IP address from the allow list.
+if ip_to_remove in allow_list:
+ allow_list.remove(ip_to_remove)
+
+#Update the file with the revised list of IP addresses:
+#Open the file again, this time with write mode ("w"), and write the modified list back to the file.
+  with open("allow_list.txt", "w") as file:
+ file.write(" ".join(allow_list))
+
+
+#Provide a summary or conclusion of the algorithm, explaining that the file containing the allow list has been opened, its content read and converted into a list, 
+unnecessary IP addresses removed based on the remove list, and the updated list written back to the file.
+
+#Full Algorithm:
+with open("allow_list.txt", "r") as file:
+ allow_list_content = file.read()
+
+allow_list = allow_list_content.split()
+
+for ip_to_remove in remove_list:
+ if ip_to_remove in allow_list:
+ allow_list.remove(ip_to_remove)
+
+with open("allow_list.txt", "w") as file:
+ file.write(" ".join(allow_list))
+
+# Summary:
+# The file containing the allow list has been opened, its content read and converted into a list,
+# unnecessary IP addresses removed based on the remove list, and the updated list written back to the file.
